@@ -11,7 +11,7 @@ TIME_ZONE = 'MST'
 # This description will be used on the html and sharing meta tags
 HACKATHON_DESCRIPTION = 'The CU Blockchain Summit is a student summit happening on April 14th and 15th'
 # Domain where application is deployed, can be set by env variable
-HACKATHON_DOMAIN = os.environ.get('DOMAIN', 'localhost:8000')
+HACKATHON_DOMAIN = os.environ.get('DOMAIN', 'my.cublockchain.org')
 # Hackathon contact email: where should all hackers contact you. It will also be used as a sender for all emails
 HACKATHON_CONTACT_EMAIL = 'blockchain@colorado.edu'
 # Hackathon logo url, will be used on all emails
