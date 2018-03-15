@@ -107,7 +107,7 @@ class Application(models.Model):
         MinValueValidator(0, "Negative? Really? Please put a positive value")])
 
     # Random lenny face
-    lennyface = models.CharField(max_length=300, default='-.-')
+    # lennyface = models.CharField(max_length=300, default='-.-')
 
     # Giv me a resume here!
     resume = models.FileField(upload_to='resumes', null=True, blank=True)

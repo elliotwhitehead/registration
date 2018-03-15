@@ -164,6 +164,7 @@ class HackerApplication(LoginRequiredMixin, TabsView):
     def post(self, request, *args, **kwargs):
         try:
             form = forms.ApplicationForm(request.POST, request.FILES, instance=request.user.application)
+            print("here")
         except:
             form = forms.ApplicationForm(request.POST, request.FILES)
         if form.is_valid():

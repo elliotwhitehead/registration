@@ -139,7 +139,7 @@ class ApplicationForm(OverwriteOnlyModelFormMixin, BetterModelForm):
             ('Personal Info',
              {'fields': ('university', 'degree', 'graduation_year', 'gender',
                          'phone_number', 'tshirt_size', 'diet', 'other_diet',
-                         'under_age', 'lennyface'),
+                         'under_age'),
               'description': 'Hey there, before we begin we would like to know a little more about you.', }),
             ('Hackathons?', {'fields': ('description', 'first_timer', 'projects'), }),
             ('Show us what you\'ve built',
@@ -147,23 +147,8 @@ class ApplicationForm(OverwriteOnlyModelFormMixin, BetterModelForm):
               'description': 'Some of our sponsors will use this information to potentially recruit you,'
               'so please include as much as you can.'}),
         ]
-        deadline = getattr(settings, 'REIMBURSEMENT_DEADLINE', False)
-        if deadline and deadline <= timezone.now() and not self.instance.pk:
-            self._fieldsets.append(('Traveling',
-                                    {'fields': ('origin',),
-                                     'description': 'Reimbursement applications are now closed. '
-                                                    'Sorry for the inconvenience.',
-                                     }))
-        elif self.instance.pk:
-            self._fieldsets.append(('Traveling',
-                                    {'fields': ('origin',),
-                                     'description': 'If you applied for reimbursement see it on the Travel tab. '
-                                                    'Email us at %s for any change needed on reimbursements.' %
-                                                    settings.HACKATHON_CONTACT_EMAIL,
-                                     }))
-        else:
-            self._fieldsets.append(('Traveling',
-                                    {'fields': ('origin', 'reimb', 'reimb_amount'), }), )
+        self._fieldsets.append(('Location',
+                                {'fields': ('origin',)}))
 
         # Fields that we only need the first time the hacker fills the application
         # https://stackoverflow.com/questions/9704067/test-if-django-modelform-has-instance
