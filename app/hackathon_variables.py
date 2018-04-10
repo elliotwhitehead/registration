@@ -25,7 +25,7 @@ HACKATHON_TWITTER_ACCOUNT = 'CU_Blockchain'
 # (OPTIONAL) Hackathon Facebook page
 HACKATHON_FACEBOOK_PAGE = 'boulderblockchain'
 # (OPTIONAL) Github Repo for this project (so meta)
-HACKATHON_GITHUB_REPO = 'https://github.com/hackassistant/registration/'
+HACKATHON_GITHUB_REPO = 'https://github.com/CUBlockchain/registration/'
 
 # (OPTIONAL) Applications deadline
 # HACKATHON_APP_DEADLINE = timezone.datetime(2018, 2, 24, 3, 14, tzinfo=timezone.pytz.timezone(TIME_ZONE))
